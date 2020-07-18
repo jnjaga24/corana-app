@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\..\\Form.svelte",
+    "..\\..\\Result.svelte"
+  ],
+  "sourcesContent": [
+    " <style>\r\n \r\n  .card-box {\r\n    background-color: aqua;\r\n  }\r\n</style>\r\n \r\n <script>\r\n\r\nlet fields = {country : \"\", date : \"\"};\r\n\r\n import {createEventDispatcher} from 'svelte';\r\n\r\n const dispatch = createEventDispatcher();\r\n\r\n \r\n const submitHandler = () =>{\r\n    // console.log(fields);\r\n    dispatch(\"add\",fields);\r\n    fields = {country : \"\", date : \"\"};\r\n }\r\n </script>\r\n \r\n <div class=\"card-box\">\r\n  <form class=\"form\" on:submit|preventDefault = {submitHandler} >\r\n  <label for=\"country\">Choose Country:</label>\r\n  <input type=\"text\" class=\"form-control\" bind:value = {fields.country}  placeholder=\"Enter Country Name\" id=\"email\">\r\n  <label for=\"date\">Enter date:</label>\r\n  <input type=\"text\"  class=\"form-control\" bind:value = {fields.date} placeholder=\"Enter date in yy-mm-dd\" id=\"pwd\">\r\n \r\n  <button type=\"submit\" class=\"btn btn-primary btn-block\">Submit</button>\r\n</form>\r\n  </div>\r\n<br>\r\n<br>",
+    "<script>\r\n  export let country;\r\n  export let confirmed;\r\n  export let recovered;\r\n  export let deaths;\r\n  export let active;\r\n</script>\r\n\r\n<style>\r\n  .card-obj {\r\n    display: flex;\r\n  }\r\n  .card-box {\r\n    background-color: aqua;\r\n  }\r\n</style>\r\n\r\n<div class=\"card-box\">\r\n  <div class=\"container text-center\">\r\n    <h3>Corona Affected Cases</h3>\r\n  </div>\r\n  <div style=\"margin-left: 35%;\">\r\n    <div class=\"card-obj\">\r\n      <p>province :</p>\r\n      <h6>{country}</h6>\r\n    </div>\r\n\r\n    <div class=\"card-obj\">\r\n\r\n      <p>active :</p>\r\n      <h6>{active}</h6>\r\n    </div>\r\n\r\n    <div class=\"card-obj\">\r\n\r\n      <p>deaths :</p>\r\n      <h6>{deaths}</h6>\r\n    </div>\r\n\r\n    <div class=\"card-obj\">\r\n\r\n      <p>recovered :</p>\r\n      <h6>{recovered}</h6>\r\n    </div>\r\n\r\n    <div class=\"card-obj\">\r\n\r\n      <p>confirmed :</p>\r\n      <h6>{confirmed}</h6>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+  ],
+  "names": [],
+  "mappings": "AAEE,SAAS,eAAC,CAAC,AACT,gBAAgB,CAAE,IAAI,AACxB,CAAC;ACKD,SAAS,cAAC,CAAC,AACT,OAAO,CAAE,IAAI,AACf,CAAC,AACD,SAAS,cAAC,CAAC,AACT,gBAAgB,CAAE,IAAI,AACxB,CAAC"
+}
